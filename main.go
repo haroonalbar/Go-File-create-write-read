@@ -25,8 +25,9 @@ func main() {
   // 1st parameter is for setting the offset in bytes here the offset is none 
   // 2nd parameter defines where the pointer is 0 for start 1 for current and 2 for end here it's on the start
   // so the pointer is now at the start with no offset
-  file.Seek(0,0)
+  // file.Seek(0,0)
 
+  file,_ = os.Open("hello.txt")
   // create a file reader 
   reader := io.Reader(file)
   // use buffer to store the read value
