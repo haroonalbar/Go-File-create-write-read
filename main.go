@@ -58,6 +58,13 @@ func main() {
   buffer, err := io.ReadAll(reader)
   fmt.Printf("%v %v %v \n ",string(buffer),err,len(buffer))
 
+  seeker := reader.(io.Seeker)
+
+  seeker.Seek(-2,2)
+
+  buffer, err = io.ReadAll(reader)
+  fmt.Printf("%v %v %v \n ",string(buffer),err,len(buffer))
+
   // finally close the file
 	file.Close()
 }
